@@ -1,0 +1,4 @@
+- [x] make TODO.md file
+- [] make header file for employee class
+- [] make header file for project class
+- [] make custom class for tui methods
