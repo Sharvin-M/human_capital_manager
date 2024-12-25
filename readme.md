@@ -1,7 +1,4 @@
 # Human Capital Management System 
 
-
-### Current Functionality:
-    - add employees to the system
-    - add employees to projects
-    - see the total cost a given project incurs
+* A Work Day inspired system to keep track of financial data related to employees at a company.
+* Implemented using C++20 and basic OOP principles.
