@@ -2,26 +2,20 @@
 #include "Project.hpp"
 #include "Employee.hpp"
 
+// example uses of the current system
+
 int main()
 {
-    // example usage of employee constructor
-    std::vector<Employee> workForce =
-        {
-        Employee("James",
-        "james@gmail.com",
-        "Sales",
-        2000),
-        Employee("Sally",
-            "sally@yahoo.com",
-            "Engineering",
-            4000)
-        };
+    std::cout << "hello world" << std::endl;
 
-    // example usage of project constructor
-    Project tradingEngine("tradingEngine", workForce );
+    Employee Bob(111, 1000, "bob");
 
-    // example usage of getProjectCost method
-    std::cout << tradingEngine.getProjectCost() << std::endl;
+    Project Main("finance etl pipeline");
 
+    Main.addMember(Bob, 111 );
+
+    Main.getMember(111);
+
+    Main.getProjectCost();
     return 0;
 }
