@@ -3,27 +3,31 @@
 class Employee
 {
     //private data members
+    int monthlySalary { };
     std::string name;
     std::string contact;
     std::string department;
-    int salaryMonthly { };
 
 public:
+    // the constructor is explicit because it has 1 arg
     explicit Employee(std::string name_)
     {
         name = name_;
     }
-    Employee(std::string name_, std::string contact_, std::string department_, int salaryMonthly_)
+
+    // constructor that requires all args possible
+    Employee(std::string name_, std::string contact_, std::string department_, int monthlySalary_)
     {
         name = name_;
         contact = contact_;
         department = department_;
-        salaryMonthly = salaryMonthly_;
+        monthlySalary = monthlySalary_;
     }
-    std::string getName() { return name; }
-    std::string getContact() { return contact; }
-    std::string getDepartment() { return department; }
-    int getsalaryMonthly() {return salaryMonthly; }
+
+    std::string getName()           { return name; }
+    std::string getContact()        { return contact; }
+    std::string getDepartment()     { return department; }
+    int getMonthlySalary()          { return monthlySalary; }
 };
 
 class Project
@@ -38,28 +42,29 @@ public:
         members = members_;
     }
 
-    std::string getTitle() { return title; }
-    std::vector<Employee> getMembers(){ return members; }
+    std::string getTitle()              { return title; }
+    std::vector<Employee> getMembers()  { return members; }
+
     int getProjectCost()
     {
         int cost {};
         for (Employee s: members)
         {
-            cost += s.getsalaryMonthly();
+            cost += s.getMonthlySalary();
         }
         return cost;
     }
 };
 
-
 int main()
 {
-    // example usage
+    // example usage of employee constructor
+    std::vector<Employee> workForce = {Employee("James", "james@gmail.com", "Sales", 2000)};
 
-    std::vector<Employee> workforce = {Employee("James", "james@gmail.com", "Sales", 2000)};
+    // example usage of project constructor
+    Project tradingEngine("tradingEngine", workForce );
 
-    Project tradingEngine("tradingEngine", workforce );
-
+    // example usage of getProjectCost method
     std::cout << tradingEngine.getProjectCost() << std::endl;
 
     return 0;
