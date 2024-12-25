@@ -47,7 +47,7 @@ public:
 
     int getProjectCost()
     {
-        int cost {};
+        int cost { };
         for (Employee s: members)
         {
             cost += s.getMonthlySalary();
@@ -59,7 +59,17 @@ public:
 int main()
 {
     // example usage of employee constructor
-    std::vector<Employee> workForce = {Employee("James", "james@gmail.com", "Sales", 2000)};
+    std::vector<Employee> workForce =
+        {
+        Employee("James",
+        "james@gmail.com",
+        "Sales",
+        2000),
+        Employee("Sally",
+            "sally@yahoo.com",
+            "Engineering",
+            4000)
+        };
 
     // example usage of project constructor
     Project tradingEngine("tradingEngine", workForce );
