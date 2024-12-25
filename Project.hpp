@@ -3,30 +3,54 @@
 //
 // PROJECT_HPP
 #pragma once
+#include <map>
 #include "Employee.hpp"
 
 class Project
 {
     std::string title;
-    std::vector<Employee> members;
+    std::map<int, Employee> members;
 
 public:
-    Project(std::string title_, std::vector<Employee> members_)
+    Project(std::string title_)
     {
         title =   title_;
-        members = members_;
     }
 
     std::string getTitle()              { return title; }
-    std::vector<Employee> getMembers()  { return members; }
+    Employee getMember(int badgeNumber)
+    {
+
+        if (auto itt = members.find(badgeNumber); itt != members.end())
+        {
+            std::cout << "Employee found: " << itt->second.getName() <<  std::endl;
+            return itt->second;
+        } else
+        {
+            std::cerr << "employee not found";
+            exit(1);
+        }
+    }
 
     int getProjectCost()
     {
         int cost { };
-        for (Employee s: members)
+        for (auto itt: members)
         {
-            cost += s.getMonthlySalary();
+            cost += itt.second.getMonthlySalary();
         }
+        std::cout << "Project: " << getTitle() << ", Cost: " << cost << std::endl;
         return cost;
     }
+
+    void addMember(Employee employee, int badgeNumber)
+    {
+        members.emplace(badgeNumber, employee);
+    }
+
+    void removeMember(int badgeNumber)
+    {
+        members.erase(badgeNumber);
+    }
+
 };
