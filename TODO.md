@@ -1,6 +1,7 @@
-- [ ] create a class for tui methods
-- [ ] create a search feature for employees
-  - 
+- [ ] employee database
+  - [ ] create a search feature for employees
+  - [ ] create a search feature for projects
 - [x] create TODO.md file
+- [x] create a class for tui methods
 - [x] create header file for employee class
 - [x] create header file for project class
