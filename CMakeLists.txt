@@ -6,6 +6,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wdeprecated -Werror -Wcon
 
 add_executable(humanManagementSystem main.cpp
         Project.hpp
-        Employee.hpp)
         Employee.hpp
         Startup.hpp
+        State.hpp)
