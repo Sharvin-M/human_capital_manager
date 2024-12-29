@@ -4,13 +4,20 @@
 //STATE_HPP
 
 #pragma once
+#include "Project.hpp"
+#include "Employee.hpp"
+
 
 class State
 {
-    // TODO add event handler methods based on current state
+    // TODO add event handler methods
 
 public:
     State();
-    virtual void welcome();
-    virtual void userInput();
+    inline virtual void welcome();
+
+    virtual void handleUserInput(std::string &s)
+    {
+    };
+
 };

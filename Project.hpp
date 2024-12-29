@@ -8,6 +8,7 @@
 
 class Project
 {
+    static int projCount;
     std::string title;
     std::map<int, Employee> members;
 
@@ -15,6 +16,7 @@ public:
     Project(std::string title_)
     {
         title =   title_;
+        projCount++;
     }
 
     std::string getTitle()              { return title; }
