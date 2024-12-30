@@ -10,14 +10,11 @@
 
 class State
 {
-    // TODO add event handler methods
 
 public:
     State();
     inline virtual void welcome();
 
-    virtual void handleUserInput(std::string &s)
-    {
-    };
+    virtual void handleUserInput();
 
 };
