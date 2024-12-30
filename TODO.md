@@ -1,3 +1,4 @@
+- [ ] update app based on auth 
 - [ ] employee database
   - [ ] create a search feature for employees
   - [ ] create a search feature for projects

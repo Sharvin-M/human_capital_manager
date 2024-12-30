@@ -52,5 +52,4 @@ public:
     {
         members.erase(badgeNumber);
     }
-
 };
